@@ -1,8 +1,10 @@
 # Noor ul Haya
 
-Islamic prayer companion built with Flutter — accurate prayer times, reliable alarms, accountability flows, Quran reminders, and spiritual tracking.
+Islamic prayer companion built with Flutter: accurate prayer times, reliable alarms, accountability flows, Quran reminders, and spiritual tracking.
 
-**Live showcase:** `index.html` at repo root — works on Vercel (auto) and [GitHub Pages](https://usmanghias.github.io/noor/) (enable **Settings → Pages → Source: GitHub Actions**).
+**Live showcase:** `index.html` at repo root, works on Vercel (auto) and [GitHub Pages](https://usmanghias.github.io/noor/) (enable **Settings → Pages → Source: GitHub Actions**).
+
+**Public repository:** [github.com/UsmanGhias/noor](https://github.com/UsmanGhias/noor). Star the project, open issues, and send pull requests to help build the best Quran Majeed and Islamic companion experience.
 
 **Version:** 1.0.0  
 **Architecture:** Clean Architecture + Feature First  
@@ -128,6 +130,12 @@ Use specialized agents in sequence to reduce conflicts:
 
 ---
 
+## Contributing
+
+Noor ul Haya is open for community contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution steps, project ideas, and license expectations.
+
+Good first areas include Quran Majeed reading improvements, prayer alarm reliability, Qibla accuracy, Duas, Tasbih, accessibility, localization, tests, and documentation.
+
 ## CI
 
 GitHub Actions runs on every push and pull request:
@@ -140,4 +148,6 @@ GitHub Actions runs on every push and pull request:
 
 ## License
 
-Private project. All rights reserved.
+Licensed under the GNU Affero General Public License v3.0 only. See [LICENSE](LICENSE).
+
+The AGPL keeps the project open. You can study, modify, share, and contribute, but redistributed or network-accessible modified versions must keep the same license terms and provide source code as required by the license.
