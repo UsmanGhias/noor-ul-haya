@@ -128,7 +128,8 @@ abstract final class IslamicContent {
     ),
     DuaEntry(
       title: 'When distressed',
-      arabic: 'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ',
+      arabic:
+          'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ',
       transliteration: 'La ilaha illa Anta Subhanaka inni kuntu minaz-zalimin',
       translation:
           'There is no deity except You; exalted are You. Indeed, I have been of the wrongdoers.',

@@ -38,15 +38,18 @@ class PrayerAlarmService {
 
     await _plugin
         .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin>()
+          AndroidFlutterLocalNotificationsPlugin
+        >()
         ?.createNotificationChannel(channel);
 
     _initialized = true;
   }
 
   Future<bool> requestPermission() async {
-    final android = _plugin.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
+    final android = _plugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
     if (android != null) {
       final granted = await android.requestNotificationsPermission();
       return granted ?? false;
@@ -69,7 +72,8 @@ class PrayerAlarmService {
 
       var prayerAt = obligatoryPrayerTime(schedule.times, prayer);
       final now = prayerLocalNow();
-      if (prayer == Prayer.fajr && now.isAfter(prayerLocal(schedule.times.isha))) {
+      if (prayer == Prayer.fajr &&
+          now.isAfter(prayerLocal(schedule.times.isha))) {
         prayerAt = prayerLocal(schedule.times.fajrAfter);
       }
 

@@ -14,20 +14,20 @@ void main() {
     SharedPreferences.setMockInitialValues({});
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(
-      const MethodChannel('plugins.flutter.io/path_provider'),
-      (call) async {
-        if (call.method == 'getApplicationDocumentsDirectory') {
-          return '.';
-        }
-        return null;
-      },
-    );
+          const MethodChannel('plugins.flutter.io/path_provider'),
+          (call) async {
+            if (call.method == 'getApplicationDocumentsDirectory') {
+              return '.';
+            }
+            return null;
+          },
+        );
     await AppBootstrap.ensureInitialized();
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(
-      const MethodChannel('flutter.baseflow.com/geolocator'),
-      (call) async => false,
-    );
+          const MethodChannel('flutter.baseflow.com/geolocator'),
+          (call) async => false,
+        );
   });
 
   tearDown(() {

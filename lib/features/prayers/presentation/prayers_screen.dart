@@ -31,16 +31,21 @@ class _PrayersScreenState extends ConsumerState<PrayersScreen> {
       body: SafeArea(
         child: scheduleAsync.when(
           loading: () => const Center(child: CircularProgressIndicator()),
-          error: (_, __) => _ErrorState(onRetry: () {
-            ref.invalidate(prayerScheduleProvider);
-          }),
+          error: (_, __) => _ErrorState(
+            onRetry: () {
+              ref.invalidate(prayerScheduleProvider);
+            },
+          ),
           data: (schedule) {
             final current = currentObligatoryPrayer(schedule.times);
             final next = nextObligatoryPrayer(schedule.times);
-            final nextCountdown =
-                next == null ? null : timeUntilPrayer(schedule.times, next);
+            final nextCountdown = next == null
+                ? null
+                : timeUntilPrayer(schedule.times, next);
             final prayedCount = PrayerSchedule.obligatoryPrayers
-                .where((prayer) => prefs.prayedToday.contains(prayerKey(prayer)))
+                .where(
+                  (prayer) => prefs.prayedToday.contains(prayerKey(prayer)),
+                )
                 .length;
 
             return RefreshIndicator(
@@ -185,7 +190,8 @@ class _PrayersScreenState extends ConsumerState<PrayersScreen> {
                             ),
                           );
                         },
-                        onSetAlarm: () => _showAlarmSheet(context, prayer, time),
+                        onSetAlarm: () =>
+                            _showAlarmSheet(context, prayer, time),
                       ),
                     );
                   }),
@@ -217,16 +223,16 @@ class _PrayersScreenState extends ConsumerState<PrayersScreen> {
             children: [
               Text(
                 '${prayerLabel(prayer)} Alarm',
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w700),
               ),
               const SizedBox(height: 8),
               Text(
                 DateFormat.jm().format(prayerLocal(time)),
-                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      color: AppColors.primary,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.headlineSmall?.copyWith(color: AppColors.primary),
               ),
               const SizedBox(height: 24),
               FilledButton(
@@ -337,24 +343,24 @@ class _CurrentPrayerCard extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               '${prayerEmoji(displayPrayer)} ${prayerLabel(displayPrayer)}',
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w700),
             ),
             const SizedBox(height: 6),
             Text(
               DateFormat.jm().format(prayerLocal(time)),
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.w800,
-                  ),
+              style: Theme.of(
+                context,
+              ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w800),
             ),
             if (next != null && countdown != null) ...[
               const SizedBox(height: 8),
               Text(
                 '${prayerLabel(next!)} in ${formatDuration(countdown!)}',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: AppColors.textSecondary,
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: AppColors.textSecondary),
               ),
             ],
           ],
@@ -437,8 +443,9 @@ class _PrayerRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final borderColor =
-        isCurrent ? AppColors.accentGreen : AppColors.cardBorder;
+    final borderColor = isCurrent
+        ? AppColors.accentGreen
+        : AppColors.cardBorder;
 
     return InkWell(
       onTap: onSetAlarm,
@@ -455,10 +462,10 @@ class _PrayerRow extends StatelessWidget {
             IconButton(
               onPressed: onTogglePrayed,
               icon: Icon(
-                isPrayed
-                    ? Icons.check_circle
-                    : Icons.radio_button_unchecked,
-                color: isPrayed ? AppColors.accentGreen : AppColors.textSecondary,
+                isPrayed ? Icons.check_circle : Icons.radio_button_unchecked,
+                color: isPrayed
+                    ? AppColors.accentGreen
+                    : AppColors.textSecondary,
               ),
             ),
             Expanded(
@@ -486,10 +493,7 @@ class _PrayerRow extends StatelessWidget {
             ),
             Text(
               timeLabel,
-              style: const TextStyle(
-                fontWeight: FontWeight.w700,
-                fontSize: 16,
-              ),
+              style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
             ),
             IconButton(
               onPressed: onToggleAlarm,

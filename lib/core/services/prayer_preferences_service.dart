@@ -149,8 +149,7 @@ class PrayerPreferencesService {
 
   CalculationParameters calculationParameters(PrayerPreferences prefs) {
     final params = switch (prefs.calculationMethod) {
-      CalculationMethodOption.karachi =>
-        CalculationMethodParameters.karachi(),
+      CalculationMethodOption.karachi => CalculationMethodParameters.karachi(),
       CalculationMethodOption.muslimWorldLeague =>
         CalculationMethodParameters.muslimWorldLeague(),
       CalculationMethodOption.ummAlQura =>
