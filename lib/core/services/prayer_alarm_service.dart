@@ -1,8 +1,8 @@
+import 'package:adhan_dart/adhan_dart.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:noor_ul_haya/core/services/prayer_location_service.dart';
 import 'package:noor_ul_haya/core/services/prayer_preferences_service.dart';
 import 'package:noor_ul_haya/core/utils/prayer_utils.dart';
-import 'package:adhan_dart/adhan_dart.dart';
 import 'package:timezone/timezone.dart' as tz;
 
 /// Schedules local notifications for enabled prayer alarms.
@@ -77,7 +77,9 @@ class PrayerAlarmService {
         prayerAt = prayerLocal(schedule.times.fajrAfter);
       }
 
-      var alarmAt = prayerAt.subtract(const Duration(minutes: _minutesBefore));
+      final alarmAt = prayerAt.subtract(
+        const Duration(minutes: _minutesBefore),
+      );
       if (alarmAt.isBefore(now)) {
         continue;
       }

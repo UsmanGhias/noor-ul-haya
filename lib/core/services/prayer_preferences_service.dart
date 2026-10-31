@@ -158,8 +158,7 @@ class PrayerPreferencesService {
         CalculationMethodParameters.egyptian(),
       CalculationMethodOption.dubai => CalculationMethodParameters.dubai(),
     };
-    params.madhab = prefs.madhab;
-    return params;
+    return params..madhab = prefs.madhab;
   }
 
   String _prayedKey(DateTime date) {

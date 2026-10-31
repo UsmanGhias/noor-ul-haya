@@ -4,11 +4,10 @@ import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
 import 'package:noor_ul_haya/core/config/router/app_router.dart';
 import 'package:noor_ul_haya/core/providers/prayer_providers.dart';
-import 'package:noor_ul_haya/core/theme/app_colors.dart';
 import 'package:noor_ul_haya/core/services/prayer_alarm_service.dart';
-import 'package:noor_ul_haya/core/utils/prayer_utils.dart';
 import 'package:noor_ul_haya/core/services/prayer_location_service.dart';
-import 'package:adhan_dart/adhan_dart.dart';
+import 'package:noor_ul_haya/core/theme/app_colors.dart';
+import 'package:noor_ul_haya/core/utils/prayer_utils.dart';
 
 /// First-run onboarding flow.
 class OnboardingScreen extends ConsumerStatefulWidget {
@@ -126,7 +125,7 @@ class _LocationStep extends ConsumerWidget {
           Container(
             width: 180,
             height: 180,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               shape: BoxShape.circle,
               color: AppColors.accentMint,
             ),

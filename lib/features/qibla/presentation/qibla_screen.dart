@@ -1,3 +1,6 @@
+// Separate canvas calls read better in the painter.
+// ignore_for_file: cascade_invocations
+
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';

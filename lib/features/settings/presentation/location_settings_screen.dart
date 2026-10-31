@@ -85,7 +85,7 @@ class _LocationSettingsScreenState
                   ),
                   const SizedBox(height: 12),
                   DropdownButtonFormField<PakistanCity>(
-                    value: _city,
+                    initialValue: _city,
                     decoration: const InputDecoration(labelText: 'City'),
                     items: PakistanCity.values
                         .map(
@@ -118,7 +118,7 @@ class _LocationSettingsScreenState
                   ),
                   const SizedBox(height: 12),
                   DropdownButtonFormField<CalculationMethodOption>(
-                    value: _method,
+                    initialValue: _method,
                     decoration: const InputDecoration(labelText: 'Method'),
                     items: CalculationMethodOption.values
                         .map(
@@ -136,7 +136,7 @@ class _LocationSettingsScreenState
                   ),
                   const SizedBox(height: 12),
                   DropdownButtonFormField<Madhab>(
-                    value: _madhab,
+                    initialValue: _madhab,
                     decoration: const InputDecoration(labelText: 'Madhhab'),
                     items: const [
                       DropdownMenuItem(

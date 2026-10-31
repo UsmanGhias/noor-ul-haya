@@ -1,13 +1,13 @@
+import 'package:adhan_dart/adhan_dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hijri/hijri_calendar.dart';
 import 'package:intl/intl.dart';
-import 'package:noor_ul_haya/core/services/prayer_alarm_service.dart';
 import 'package:noor_ul_haya/core/providers/prayer_providers.dart';
+import 'package:noor_ul_haya/core/services/prayer_alarm_service.dart';
 import 'package:noor_ul_haya/core/services/prayer_location_service.dart';
 import 'package:noor_ul_haya/core/theme/app_colors.dart';
 import 'package:noor_ul_haya/core/utils/prayer_utils.dart';
-import 'package:adhan_dart/adhan_dart.dart';
 
 /// Main prayer dashboard with times, tracker, and alarms.
 class PrayersScreen extends ConsumerStatefulWidget {

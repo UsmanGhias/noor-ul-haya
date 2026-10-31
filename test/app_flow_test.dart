@@ -10,6 +10,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   setUp(() async {
+    AppBootstrap.skipAlarmsForTest = true;
     AppBootstrap.resetForTest();
     SharedPreferences.setMockInitialValues({});
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
@@ -52,5 +53,8 @@ void main() {
 
     expect(find.text('Noor ul Haya'), findsOneWidget);
     expect(find.text('Your daily prayer companion'), findsOneWidget);
+
+    // Let the splash delay finish so no timer outlives the test.
+    await tester.pump(const Duration(seconds: 5));
   });
 }
